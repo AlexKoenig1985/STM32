@@ -74,7 +74,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  uint16_t tiVal = 0;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -105,27 +105,33 @@ int main(void)
 
   rslt = HAL_TIM_Base_Start(&htim16);
 
+  uint16_t tiVal = 0;
+  tiVal = __HAL_TIM_GET_COUNTER(&htim16);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
+
   while (1)
   {
     /* USER CODE END WHILE */
-    strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
+    uint16_t tiValDelta = __HAL_TIM_GET_COUNTER(&htim16) - tiVal;
 
-    TempHumPresSensor = ReadSensor();
-
-    if (TempHumPresSensor.rslt == BME280_OK)
+    if (tiValDelta >= 10000)
     {
-      TempHumPresSensor.temperature;
-      TempHumPresSensor.humidity;
-      TempHumPresSensor.pressure;
+      TempHumPresSensor = ReadSensor();
+
+      if (TempHumPresSensor.rslt == BME280_OK)
+      {
+        TempHumPresSensor.temperature;
+        TempHumPresSensor.humidity;
+        TempHumPresSensor.pressure;
+      }
+      tiVal = __HAL_TIM_GET_COUNTER(&htim16);
     }
 
-    tiVal = __HAL_TIM_GET_COUNTER(&htim16);
-    HAL_Delay(50);
-    tiVal = __HAL_TIM_GET_COUNTER(&htim16) - tiVal;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
