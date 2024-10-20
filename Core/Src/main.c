@@ -49,6 +49,8 @@
 /* USER CODE BEGIN PV */
 HAL_StatusTypeDef rslt;
 
+uint8_t flgTimerEclapes = FALSE;
+
 char hum_string[50];
 char temp_string[50];
 char press_string[50];
@@ -103,10 +105,7 @@ int main(void)
 
   rslt = SetupSensor();
 
-  rslt = HAL_TIM_Base_Start(&htim16);
-
-  uint16_t tiVal = 0;
-  tiVal = __HAL_TIM_GET_COUNTER(&htim16);
+  rslt = HAL_TIM_Base_Start_IT(&htim16);
 
   /* USER CODE END 2 */
 
@@ -117,19 +116,18 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    uint16_t tiValDelta = __HAL_TIM_GET_COUNTER(&htim16) - tiVal;
 
-    if (tiValDelta >= 10000)
+    if (flgTimerEclapes == TRUE)
     {
-      TempHumPresSensor = ReadSensor();
 
+      TempHumPresSensor = ReadSensor();
       if (TempHumPresSensor.rslt == BME280_OK)
       {
         TempHumPresSensor.temperature;
         TempHumPresSensor.humidity;
         TempHumPresSensor.pressure;
       }
-      tiVal = __HAL_TIM_GET_COUNTER(&htim16);
+      flgTimerEclapes = FALSE;
     }
 
     /* USER CODE BEGIN 3 */
@@ -182,6 +180,15 @@ void SystemClock_Config(void)
   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
   {
     Error_Handler();
+  }
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+
+  if (htim == &htim16)
+  {
+    flgTimerEclapes = TRUE;
   }
 }
 
