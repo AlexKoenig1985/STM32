@@ -63,8 +63,8 @@ strFdbkSensor ReadSensor(void)
 
     rslt = bme280_get_sensor_data(BME280_ALL, &comp_data, &dev);
 
-    TempHumPresSensor.humidity = comp_data.humidity / 10000.0;
-    TempHumPresSensor.pressure = comp_data.pressure / 1024.0;
+    TempHumPresSensor.humidity = comp_data.humidity / 1000.0;
+    TempHumPresSensor.pressure = comp_data.pressure / 10024.0;
     TempHumPresSensor.temperature = comp_data.temperature / 100.0;
     TempHumPresSensor.rslt = rslt;
 
