@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
+#include "tim.h"
 #include "gpio.h"
 #include "bme280.h"
 #include "sensor.h"
@@ -73,7 +74,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  uint16_t tiVal = 0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -95,11 +96,14 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
 
+  MX_TIM16_Init();
   /* USER CODE BEGIN 2 */
 
   rslt = InitSensor();
 
   rslt = SetupSensor();
+
+  rslt = HAL_TIM_Base_Start(&htim16);
 
   /* USER CODE END 2 */
 
@@ -118,6 +122,10 @@ int main(void)
       TempHumPresSensor.humidity;
       TempHumPresSensor.pressure;
     }
+
+    tiVal = __HAL_TIM_GET_COUNTER(&htim16);
+    HAL_Delay(50);
+    tiVal = __HAL_TIM_GET_COUNTER(&htim16) - tiVal;
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
