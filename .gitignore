@@ -1,0 +1,15 @@
+.vscode/c_cpp_properties.json
+*.mxproject
+.ninja_deps
+.ninja_log
+*.json
+*LICENSE.*
+*.obj
+*HowTo*.txt
+*.elf
+*.map
+*.icf
+*config.txt
+*/.vscode
+*yaml
+*.o

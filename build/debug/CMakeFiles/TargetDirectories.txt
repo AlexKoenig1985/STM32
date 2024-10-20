@@ -1,0 +1,5 @@
+C:/Development/STM32/STM32/build/debug/CMakeFiles/STM32_I2C_Config.dir
+C:/Development/STM32/STM32/build/debug/CMakeFiles/edit_cache.dir
+C:/Development/STM32/STM32/build/debug/CMakeFiles/rebuild_cache.dir
+C:/Development/STM32/STM32/build/debug/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+C:/Development/STM32/STM32/build/debug/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
