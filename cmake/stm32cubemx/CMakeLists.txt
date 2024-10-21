@@ -15,6 +15,7 @@ target_compile_definitions(stm32cubemx INTERFACE
 target_include_directories(stm32cubemx INTERFACE
     ../../Core/Inc
     ../../Core/Inc/BME280
+    ../../Core/Inc/SSD1306
     ../../Drivers/STM32L4xx_HAL_Driver/Inc
     ../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy
     ../../Drivers/CMSIS/Device/ST/STM32L4xx/Include
@@ -30,6 +31,8 @@ target_sources(stm32cubemx INTERFACE
     ../../Core/Src/stm32l4xx_hal_msp.c
     ../../Core/Src/BME280/bme280.c
     ../../Core/Src/BME280/sensor.c
+    ../../Core/Src/SSD1306/ssd1306_fonts.c
+    ../../Core/Src/SSD1306/ssd1306.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
