@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: STM32_I2C_Config
+# Project: STM32_I2C_Oled
 # Configurations: Debug
 # =============================================================================
 
@@ -41,277 +41,277 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Development/STM32/STM32/build/debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target STM32_I2C_Config
+# Object build statements for EXECUTABLE target STM32_I2C_Oled
 
 
 #############################################
-# Order-only phony target for STM32_I2C_Config
+# Order-only phony target for STM32_I2C_Oled
 
-build cmake_object_order_depends_target_STM32_I2C_Config: phony || CMakeFiles/STM32_I2C_Config.dir
+build cmake_object_order_depends_target_STM32_I2C_Oled: phony || CMakeFiles/STM32_I2C_Oled.dir
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/main.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/main.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/main.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/main.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\main.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\main.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/gpio.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/gpio.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/gpio.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/gpio.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\gpio.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\gpio.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/i2c.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/i2c.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/i2c.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/i2c.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\i2c.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\i2c.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/tim.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/tim.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/tim.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/tim.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\tim.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\tim.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/stm32l4xx_it.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/stm32l4xx_it.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/stm32l4xx_it.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/stm32l4xx_it.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\stm32l4xx_it.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\stm32l4xx_it.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/stm32l4xx_hal_msp.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/stm32l4xx_hal_msp.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/stm32l4xx_hal_msp.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/stm32l4xx_hal_msp.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\stm32l4xx_hal_msp.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\stm32l4xx_hal_msp.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/BME280/bme280.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/BME280/bme280.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/BME280/bme280.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/BME280/bme280.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\BME280\bme280.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\BME280\bme280.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src\BME280
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\BME280
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/BME280/sensor.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/BME280/sensor.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/BME280/sensor.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/BME280/sensor.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\BME280\sensor.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\BME280\sensor.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src\BME280
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\BME280
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/SSD1306/ssd1306_fonts.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/SSD1306/ssd1306_fonts.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/SSD1306/ssd1306_fonts.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/SSD1306/ssd1306_fonts.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\SSD1306\ssd1306_fonts.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\SSD1306\ssd1306_fonts.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src\SSD1306
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\SSD1306
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/SSD1306/ssd1306.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/SSD1306/ssd1306.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/SSD1306/ssd1306.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/SSD1306/ssd1306.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\SSD1306\ssd1306.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\SSD1306\ssd1306.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src\SSD1306
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\SSD1306
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rcc_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ramfunc.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_flash_ramfunc.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_gpio.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_dma_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_cortex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_tim_ex.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Drivers\STM32L4xx_HAL_Driver\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Drivers\STM32L4xx_HAL_Driver\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/system_stm32l4xx.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/system_stm32l4xx.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/system_stm32l4xx.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/system_stm32l4xx.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\system_stm32l4xx.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\system_stm32l4xx.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/sysmem.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/sysmem.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/sysmem.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/sysmem.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\sysmem.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\sysmem.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/Core/Src/syscalls.c.obj: C_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/syscalls.c || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/Core/Src/syscalls.c.obj: C_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/Core/Src/syscalls.c || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\Core\Src\syscalls.c.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\Core\Src\syscalls.c.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir\Core\Src
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir\Core\Src
 
-build CMakeFiles/STM32_I2C_Config.dir/startup_stm32l4r5xx.s.obj: ASM_COMPILER__STM32_I2C_Config_unscanned_Debug C$:/Development/STM32/STM32/startup_stm32l4r5xx.s || cmake_object_order_depends_target_STM32_I2C_Config
+build CMakeFiles/STM32_I2C_Oled.dir/startup_stm32l4r5xx.s.obj: ASM_COMPILER__STM32_I2C_Oled_unscanned_Debug C$:/Development/STM32/STM32/startup_stm32l4r5xx.s || cmake_object_order_depends_target_STM32_I2C_Oled
   DEFINES = -DDEBUG -DSTM32L4R5xx -DUSE_HAL_DRIVER
-  DEP_FILE = CMakeFiles\STM32_I2C_Config.dir\startup_stm32l4r5xx.s.obj.d
+  DEP_FILE = CMakeFiles\STM32_I2C_Oled.dir\startup_stm32l4r5xx.s.obj.d
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -x assembler-with-cpp -MMD -MP -g
   INCLUDES = -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/BME280 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/SSD1306 -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32L4xx/Include -IC:/Development/STM32/STM32/cmake/stm32cubemx/../../Drivers/CMSIS/Include
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
-  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Config.dir
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
+  OBJECT_FILE_DIR = CMakeFiles\STM32_I2C_Oled.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target STM32_I2C_Config
+# Link build statements for EXECUTABLE target STM32_I2C_Oled
 
 
 #############################################
-# Link the executable STM32_I2C_Config.elf
+# Link the executable STM32_I2C_Oled.elf
 
-build STM32_I2C_Config.elf: C_EXECUTABLE_LINKER__STM32_I2C_Config_Debug CMakeFiles/STM32_I2C_Config.dir/Core/Src/main.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/gpio.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/i2c.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/tim.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/stm32l4xx_it.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/stm32l4xx_hal_msp.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/BME280/bme280.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/BME280/sensor.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/SSD1306/ssd1306_fonts.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/SSD1306/ssd1306.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj CMakeFiles/STM32_I2C_Config.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/system_stm32l4xx.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/sysmem.c.obj CMakeFiles/STM32_I2C_Config.dir/Core/Src/syscalls.c.obj CMakeFiles/STM32_I2C_Config.dir/startup_stm32l4r5xx.s.obj
+build STM32_I2C_Oled.elf: C_EXECUTABLE_LINKER__STM32_I2C_Oled_Debug CMakeFiles/STM32_I2C_Oled.dir/Core/Src/main.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/gpio.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/i2c.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/tim.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/stm32l4xx_it.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/stm32l4xx_hal_msp.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/BME280/bme280.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/BME280/sensor.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/SSD1306/ssd1306_fonts.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/SSD1306/ssd1306.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_rcc_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_gpio.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_dma_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_pwr_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_cortex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c.obj CMakeFiles/STM32_I2C_Oled.dir/Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/system_stm32l4xx.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/sysmem.c.obj CMakeFiles/STM32_I2C_Oled.dir/Core/Src/syscalls.c.obj CMakeFiles/STM32_I2C_Oled.dir/startup_stm32l4r5xx.s.obj
   FLAGS = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g
-  OBJECT_DIR = CMakeFiles\STM32_I2C_Config.dir
+  OBJECT_DIR = CMakeFiles\STM32_I2C_Oled.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = STM32_I2C_Config.elf
-  TARGET_PDB = STM32_I2C_Config.elf.dbg
+  TARGET_FILE = STM32_I2C_Oled.elf
+  TARGET_PDB = STM32_I2C_Oled.elf.dbg
 
 
 #############################################
@@ -369,7 +369,7 @@ build cmake/stm32cubemx/rebuild_cache: phony cmake/stm32cubemx/CMakeFiles/rebuil
 # =============================================================================
 # Target aliases.
 
-build STM32_I2C_Config: phony STM32_I2C_Config.elf
+build STM32_I2C_Oled: phony STM32_I2C_Oled.elf
 
 # =============================================================================
 # Folder targets.
@@ -379,7 +379,7 @@ build STM32_I2C_Config: phony STM32_I2C_Config.elf
 #############################################
 # Folder: C:/Development/STM32/STM32/build/debug
 
-build all: phony STM32_I2C_Config.elf cmake/stm32cubemx/all
+build all: phony STM32_I2C_Oled.elf cmake/stm32cubemx/all
 
 # =============================================================================
 

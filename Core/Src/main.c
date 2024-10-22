@@ -26,6 +26,9 @@
 /* USER CODE BEGIN Includes */
 #include "bme280.h"
 #include "sensor.h"
+#include "ssd1306.h"
+#include "ssd1306_fonts.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -106,6 +109,20 @@ int main(void)
 
   rslt = HAL_TIM_Base_Start_IT(&htim16);
 
+  ssd1306_Init();
+
+  ssd1306_SetCursor(5, 5);
+  char myText[] = "Hello Oled";
+  char ReturnVal;
+  ReturnVal = ssd1306_WriteString(myText, Font_7x10, White);
+  // ssd1306_Fill(White);
+  ssd1306_UpdateScreen();
+
+  ssd1306_SetCursor(5, 15);
+  char myText2[] = "Hello Oled _2";
+  ReturnVal = ssd1306_WriteString(myText2, Font_7x10, White);
+  // ssd1306_Fill(White);
+  ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
   /* Infinite loop */

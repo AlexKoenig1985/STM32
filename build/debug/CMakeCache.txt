@@ -156,7 +156,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=STM32_I2C_Config
+CMAKE_PROJECT_NAME:STATIC=STM32_I2C_Oled
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/arm-none-eabi-ranlib.exe
@@ -234,6 +234,15 @@ STM32_I2C_Config_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 STM32_I2C_Config_SOURCE_DIR:STATIC=C:/Development/STM32/STM32
+
+//Value Computed by CMake
+STM32_I2C_Oled_BINARY_DIR:STATIC=C:/Development/STM32/STM32/build/debug
+
+//Value Computed by CMake
+STM32_I2C_Oled_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+STM32_I2C_Oled_SOURCE_DIR:STATIC=C:/Development/STM32/STM32
 
 //Value Computed by CMake
 stm32cubemx_BINARY_DIR:STATIC=C:/Development/STM32/STM32/build/debug/cmake/stm32cubemx
