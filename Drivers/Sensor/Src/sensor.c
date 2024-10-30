@@ -2,9 +2,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "bme280.h"
 #include "sensor.h"
-#include <stdio.h>
 #include <string.h>
-#include <stdlib.h>
 #include "i2c.h"
 
 /* Private variables ---------------------------------------------------------*/

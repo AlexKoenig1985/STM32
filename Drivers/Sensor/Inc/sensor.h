@@ -1,6 +1,8 @@
 #ifndef SENSOR_H_
 #define SENSOR_H_
 
+/* Includes ------------------------------------------------------------------*/
+#include <stdint.h>
 /*! CPP guard */
 #ifdef __cplusplus
 extern "C"

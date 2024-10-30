@@ -26,8 +26,7 @@
 /* USER CODE BEGIN Includes */
 #include "bme280.h"
 #include "sensor.h"
-#include "ssd1306.h"
-#include "ssd1306_fonts.h"
+#include "display.h"
 
 /* USER CODE END Includes */
 
@@ -108,21 +107,9 @@ int main(void)
 
   rslt = HAL_TIM_Base_Start_IT(&htim16);
 
-  ssd1306_Init();
+  rslt = InitDisplay();
 
-  ssd1306_SetCursor(5, 5);
-  char myText[] = "Hello Oled";
-  char ReturnVal;
-  ReturnVal = ssd1306_WriteString(myText, Font_7x10, White);
-  // ssd1306_Fill(White);
-  ssd1306_UpdateScreen();
-
-  ssd1306_SetCursor(5, 15);
-  char myText2[] = "Hello Oled _2";
-  ReturnVal = ssd1306_WriteString(myText2, Font_7x10, White);
-  // ssd1306_Fill(White);
-  ssd1306_UpdateScreen();
-  /* USER CODE END 2 */
+    /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -141,9 +128,9 @@ int main(void)
       if (TempHumPresSensor.rslt == BME280_OK)
       {
         HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-        TempHumPresSensor.temperature;
-        TempHumPresSensor.humidity;
-        TempHumPresSensor.pressure;
+        // sprintf(myText, "%s %.2f", "Temperature", TempHumPresSensor.temperature);
+
+        WriteSensorData(TempHumPresSensor);
       }
       flgTimerEclapes = FALSE;
     }
