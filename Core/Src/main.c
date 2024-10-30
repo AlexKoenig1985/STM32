@@ -109,7 +109,7 @@ int main(void)
 
   rslt = InitDisplay();
 
-    /* USER CODE END 2 */
+  /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -130,7 +130,7 @@ int main(void)
         HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
         // sprintf(myText, "%s %.2f", "Temperature", TempHumPresSensor.temperature);
 
-        WriteSensorData(TempHumPresSensor);
+        DisplaySensorData(TempHumPresSensor);
       }
       flgTimerEclapes = FALSE;
     }

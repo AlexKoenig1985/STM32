@@ -20,6 +20,9 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* Private function prototypes -----------------------------------------------*/
+HAL_StatusTypeDef DisplayValues(const char *label, float value, const char *unit, const uint8_t x_cord, const uint8_t y_cord);
+/* Private user code ---------------------------------------------------------*/
+
 int8_t InitDisplay(void)
 {
     HAL_StatusTypeDef rslt;
@@ -51,26 +54,27 @@ int8_t WriteToDisplay(const uint8_t x_cord, const uint8_t y_cord, char *displayt
     return rslt;
 }
 
-void WriteSensorData(strFdbkSensor SensorData)
+void DisplaySensorData(strFdbkSensor SensorData)
 {
-    int whole = (int)SensorData.temperature;
-    int decimal = (int)((SensorData.temperature - whole) * 100);
-    char myText[18] = "";
     HAL_StatusTypeDef rslt = HAL_OK;
-    sprintf(myText, "Temperature %d.%2dC", whole, decimal);
-    rslt = WriteToDisplay(DISPLAY_X_TEMPERATURE, DISPLAY_Y_TEMPERATURE, myText);
-    if (rslt == HAL_OK)
-    {
-        whole = (int)SensorData.pressure;
 
-        sprintf(myText, "Pressure %d hPa", whole);
-        rslt = WriteToDisplay(DISPLAY_X_PRESSURE, DISPLAY_Y_PRESSURE, myText);
+    rslt = DisplayValues("Temperature", SensorData.temperature, "C", DISPLAY_X_TEMPERATURE, DISPLAY_Y_TEMPERATURE);
+    if (rslt == HAL_OK)
+    {
+        rslt = DisplayValues("Pres", SensorData.pressure, "hPa", DISPLAY_X_PRESSURE, DISPLAY_Y_PRESSURE);
     }
     if (rslt == HAL_OK)
     {
-        whole = (int)SensorData.humidity;
-        decimal = (int)((SensorData.humidity - whole) * 100);
-        sprintf(myText, "Humidity %d.%2d%%", whole, decimal);
-        rslt = WriteToDisplay(DISPLAY_X_HUMIDITY, DISPLAY_Y_HUMIDITY, myText);
+        rslt = DisplayValues("Humidity", SensorData.temperature, "%", DISPLAY_X_HUMIDITY, DISPLAY_Y_HUMIDITY);
     }
+}
+
+HAL_StatusTypeDef DisplayValues(const char *label, float value, const char *unit, const uint8_t x_cord, const uint8_t y_cord)
+{
+    int whole = (int)value;
+    int decimal = (int)((value - whole) * 100);
+    char TextBuffer[18] = "";
+    sprintf(TextBuffer, "%s %d.%01d%s", label, whole, decimal, unit);
+    HAL_StatusTypeDef rslt = WriteToDisplay(x_cord, y_cord, TextBuffer);
+    return rslt;
 }

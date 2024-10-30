@@ -12,7 +12,7 @@ extern "C"
 
     int8_t InitDisplay(void);
     int8_t WriteToDisplay(const uint8_t x_cord, const uint8_t y_cord, char *displaytesxt);
-    void WriteSensorData(strFdbkSensor SensorData);
+    void DisplaySensorData(strFdbkSensor SensorData);
 
 #ifdef __cplusplus
 }
