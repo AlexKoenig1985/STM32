@@ -14,12 +14,13 @@ target_compile_definitions(stm32cubemx INTERFACE
 
 target_include_directories(stm32cubemx INTERFACE
     ../../Core/Inc
-    ../../Core/Inc/BME280
-    ../../Core/Inc/SSD1306
+    ../../Drivers/Sensor/Inc/BME280
+    ../../Drivers/Display/Inc/SSD1306
     ../../Drivers/STM32L4xx_HAL_Driver/Inc
     ../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy
     ../../Drivers/CMSIS/Device/ST/STM32L4xx/Include
     ../../Drivers/CMSIS/Include
+    ../../Drivers/Sensor/Inc
 )
 
 target_sources(stm32cubemx INTERFACE
@@ -29,10 +30,8 @@ target_sources(stm32cubemx INTERFACE
     ../../Core/Src/tim.c
     ../../Core/Src/stm32l4xx_it.c
     ../../Core/Src/stm32l4xx_hal_msp.c
-    ../../Core/Src/BME280/bme280.c
-    ../../Core/Src/BME280/sensor.c
-    ../../Core/Src/SSD1306/ssd1306_fonts.c
-    ../../Core/Src/SSD1306/ssd1306.c
+    ../../Drivers/Display/Src/SSD1306/ssd1306_fonts.c
+    ../../Drivers/Display/Src/SSD1306/ssd1306.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_i2c_ex.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal.c
@@ -50,6 +49,8 @@ target_sources(stm32cubemx INTERFACE
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_exti.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim.c
     ../../Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_tim_ex.c
+    ../../Drivers/Sensor/Src/sensor.c
+    ../../Drivers/Sensor/Src/BME280/bme280.c
     ../../Core/Src/system_stm32l4xx.c
     ../../Core/Src/sysmem.c
     ../../Core/Src/syscalls.c

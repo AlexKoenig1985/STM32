@@ -15,8 +15,8 @@ extern "C"
         int8_t rslt;
     } strFdbkSensor;
 
-    int8_t InitSensor(void);
-    int8_t SetupSensor(void);
+    int8_t InitSensors(void);
+
     strFdbkSensor ReadSensor(void);
 
 #ifdef __cplusplus

@@ -101,11 +101,10 @@ int main(void)
   MX_GPIO_Init();
   MX_I2C1_Init();
   MX_TIM16_Init();
+
   /* USER CODE BEGIN 2 */
 
-  rslt = InitSensor();
-
-  rslt = SetupSensor();
+  rslt = InitSensors();
 
   rslt = HAL_TIM_Base_Start_IT(&htim16);
 

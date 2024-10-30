@@ -24,14 +24,15 @@ int8_t user_i2c_write(const uint8_t id, const uint8_t reg_addr, uint8_t *data, c
 
 int8_t user_i2c_read(const uint8_t id, uint8_t reg_addr, uint8_t *data, const uint16_t len);
 
+static int8_t SetupSensors(void);
+
 void user_delay_ms(const uint32_t period);
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
 
-int8_t InitSensor(void)
+int8_t InitSensors(void)
 {
-    MX_I2C1_Init();
 
     dev.dev_id = BME280_I2C_ADDR_PRIM;
     dev.intf = BME280_I2C_INTF;
@@ -41,10 +42,15 @@ int8_t InitSensor(void)
 
     rslt = bme280_init(&dev);
 
+    if (rslt == HAL_OK)
+    {
+        rslt = SetupSensors();
+    }
+
     return rslt;
 }
 
-int8_t SetupSensor(void)
+int8_t SetupSensors(void)
 {
     dev.settings.osr_h = BME280_OVERSAMPLING_1X;
     dev.settings.osr_p = BME280_OVERSAMPLING_16X;
