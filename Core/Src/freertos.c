@@ -25,7 +25,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "adc.h"
+#include "tim.h"
+#include "sensor.h"
+#include "bme280.h"
+#include "display.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,19 +49,25 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
+uint16_t timer_val = 0; 
+HAL_StatusTypeDef rslt;
+strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
+
+
+
 
 /* USER CODE END Variables */
-/* Definitions for Blink01 */
-osThreadId_t Blink01Handle;
-const osThreadAttr_t Blink01_attributes = {
-  .name = "Blink01",
+/* Definitions for ReadSensorData */
+osThreadId_t ReadSensorDataHandle;
+const osThreadAttr_t ReadSensorData_attributes = {
+  .name = "ReadSensorData",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for Blink02 */
-osThreadId_t Blink02Handle;
-const osThreadAttr_t Blink02_attributes = {
-  .name = "Blink02",
+/* Definitions for DisplayData */
+osThreadId_t DisplayDataHandle;
+const osThreadAttr_t DisplayData_attributes = {
+  .name = "DisplayData",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityBelowNormal,
 };
@@ -67,8 +77,8 @@ const osThreadAttr_t Blink02_attributes = {
 
 /* USER CODE END FunctionPrototypes */
 
-void StartBlink01(void *argument);
-void StartBlink02(void *argument);
+void StartReadData(void *argument);
+void StartDisplayData(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -79,7 +89,8 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-
+  rslt = InitSensors();
+  rslt = InitDisplay();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -92,6 +103,7 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+  HAL_TIM_Base_Start(&htim17);
   /* USER CODE END RTOS_TIMERS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
@@ -99,11 +111,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of Blink01 */
-  Blink01Handle = osThreadNew(StartBlink01, NULL, &Blink01_attributes);
+  /* creation of ReadSensorData */
+  ReadSensorDataHandle = osThreadNew(StartReadData, NULL, &ReadSensorData_attributes);
 
-  /* creation of Blink02 */
-  Blink02Handle = osThreadNew(StartBlink02, NULL, &Blink02_attributes);
+  /* creation of DisplayData */
+  DisplayDataHandle = osThreadNew(StartDisplayData, NULL, &DisplayData_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -115,48 +127,44 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartBlink01 */
+/* USER CODE BEGIN Header_StartReadData */
 /**
-  * @brief  Function implementing the Blink01 thread.
+  * @brief  Function implementing the ReadSensorData thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartBlink01 */
-void StartBlink01(void *argument)
+/* USER CODE END Header_StartReadData */
+void StartReadData(void *argument)
 {
-  /* USER CODE BEGIN StartBlink01 */
+  /* USER CODE BEGIN StartReadData */
   /* Infinite loop */
+  
   for(;;)
   {
-    HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-    osDelay(500);
+    TempHumPresSensor = ReadSensor();
+    ReadAdcValue();    
+    osDelay(1000);
   }
-  //In case we accidentally exit form task loop
-  osThreadTerminate(NULL);
-  /* USER CODE END StartBlink01 */
+  /* USER CODE END StartReadData */
 }
 
-/* USER CODE BEGIN Header_StartBlink02 */
+/* USER CODE BEGIN Header_StartDisplayData */
 /**
-* @brief Function implementing the Blink02 thread.
+* @brief Function implementing the DisplayData thread.
 * @param argument: Not used
 * @retval None
 */
-/* USER CODE END Header_StartBlink02 */
-void StartBlink02(void *argument)
+/* USER CODE END Header_StartDisplayData */
+void StartDisplayData(void *argument)
 {
-  /* USER CODE BEGIN StartBlink02 */
+  /* USER CODE BEGIN StartDisplayData */
   /* Infinite loop */
   for(;;)
-  
-    {
-    HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-    osDelay(600);
+  {
+    DisplaySensorData(TempHumPresSensor);
+    osDelay(1200);
   }
-  //In case we accidentally exit form task loop
-  osThreadTerminate(NULL);
-    
-  /* USER CODE END StartBlink02 */
+  /* USER CODE END StartDisplayData */
 }
 
 /* Private application code --------------------------------------------------*/

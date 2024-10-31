@@ -21,6 +21,12 @@
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+uint8_t adc_ready = 0;
+uint16_t adc_buf[ADC_BUF_SIZE];
+uint16_t externalVoltage_mV = 0;
+uint16_t internalTemperature_C = 0;
+uint16_t internalRefVoltage_mV = 0;
+uint16_t externalBatVoltage_mV = 0;
 
 /* USER CODE END 0 */
 
@@ -105,7 +111,8 @@ void MX_ADC1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN ADC1_Init 2 */
-
+  HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
   /* USER CODE END ADC1_Init 2 */
 
 }
@@ -198,5 +205,30 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(hadc);
+  adc_ready = 1;
+  HAL_ADC_Stop_DMA(&hadc1);
+  /* NOTE : This function should not be modified. When the callback is needed,
+            function HAL_ADC_ConvCpltCallback must be implemented in the user file.
+   */
+}
 
+void ReadAdcValue(void)
+{
+  if (adc_ready == TRUE)
+      {
+
+        externalVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[0], ADC_RESOLUTION12b);
+        internalTemperature_C = __HAL_ADC_CALC_TEMPERATURE(__VREFANALOG_VOLTAGE__, adc_buf[1], ADC_RESOLUTION12b);
+        internalRefVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[2], ADC_RESOLUTION12b);
+        externalBatVoltage_mV = (__HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[3], ADC_RESOLUTION12b)) * 4;
+
+        adc_ready = FALSE;
+
+        HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
+      }
+}
 /* USER CODE END 1 */

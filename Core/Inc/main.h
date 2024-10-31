@@ -37,16 +37,19 @@ extern "C" {
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
 
+
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-
+#define ADC_BUF_SIZE 4
+#define __VREFANALOG_VOLTAGE__ 3300
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
-
+extern uint8_t adc_ready;
+extern uint16_t adc_buf[ADC_BUF_SIZE];
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

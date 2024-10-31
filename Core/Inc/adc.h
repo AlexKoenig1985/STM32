@@ -35,13 +35,19 @@ extern "C" {
 extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN Private defines */
-
+#ifndef TRUE
+#define TRUE                UINT8_C(1)
+#endif
+#ifndef FALSE
+#define FALSE               UINT8_C(0)
+#endif
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
 
-/* USER CODE BEGIN Prototypes */
 
+/* USER CODE BEGIN Prototypes */
+void ReadAdcValue(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
