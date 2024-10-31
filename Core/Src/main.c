@@ -18,6 +18,8 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
+#include "dma.h"
 #include "i2c.h"
 #include "tim.h"
 #include "gpio.h"
@@ -37,6 +39,8 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ADC_BUF_SIZE 4
+#define __VREFANALOG_VOLTAGE__ 3300
 
 /* USER CODE END PD */
 
@@ -52,9 +56,13 @@ HAL_StatusTypeDef rslt;
 
 uint8_t flgTimerEclapes = FALSE;
 
-char hum_string[50];
-char temp_string[50];
-char press_string[50];
+uint16_t adc_buf[ADC_BUF_SIZE];
+uint8_t adc_ready = 0;
+
+uint16_t externalVoltage_mV = 0;
+uint16_t internalTemperature_C = 0;
+uint16_t internalRefVoltage_mV = 0;
+uint16_t externalBatVoltage_mV = 0;
 
 /* USER CODE END PV */
 
@@ -98,16 +106,22 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_I2C1_Init();
   MX_TIM16_Init();
-
+  MX_ADC1_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+
+  HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
 
   rslt = InitSensors();
 
-  rslt = HAL_TIM_Base_Start_IT(&htim16);
-
   rslt = InitDisplay();
+
+  rslt = HAL_TIM_Base_Start_IT(&htim16);
+  HAL_TIM_Base_Start(&htim2);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
 
   /* USER CODE END 2 */
 
@@ -127,12 +141,22 @@ int main(void)
       TempHumPresSensor = ReadSensor();
       if (TempHumPresSensor.rslt == BME280_OK)
       {
-        HAL_GPIO_TogglePin(GPIOB, LD2_Pin);
-        // sprintf(myText, "%s %.2f", "Temperature", TempHumPresSensor.temperature);
-
         DisplaySensorData(TempHumPresSensor);
       }
       flgTimerEclapes = FALSE;
+
+      if (adc_ready == 1)
+      {
+
+        externalVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[0], ADC_RESOLUTION12b);
+        internalTemperature_C = __HAL_ADC_CALC_TEMPERATURE(__VREFANALOG_VOLTAGE__, adc_buf[1], ADC_RESOLUTION12b);
+        internalRefVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[2], ADC_RESOLUTION12b);
+        externalBatVoltage_mV = (__HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[3], ADC_RESOLUTION12b)) * 4;
+
+        adc_ready = 0;
+
+        HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
+      }
     }
   }
   /* USER CODE END 3 */
@@ -194,6 +218,17 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   {
     flgTimerEclapes = TRUE;
   }
+}
+
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(hadc);
+  adc_ready = 1;
+  HAL_ADC_Stop_DMA(&hadc1);
+  /* NOTE : This function should not be modified. When the callback is needed,
+            function HAL_ADC_ConvCpltCallback must be implemented in the user file.
+   */
 }
 /* USER CODE END 4 */
 
