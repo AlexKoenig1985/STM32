@@ -22,12 +22,16 @@
 #include "adc.h"
 #include "dma.h"
 #include "i2c.h"
+#include "usart.h"
 #include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bme280.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 
 
@@ -106,6 +110,7 @@ int main(void)
   MX_ADC1_Init();
   MX_TIM2_Init();
   MX_TIM17_Init();
+  MX_LPUART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   rslt = HAL_TIM_Base_Start_IT(&htim16);

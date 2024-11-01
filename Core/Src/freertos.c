@@ -30,6 +30,10 @@
 #include "sensor.h"
 #include "bme280.h"
 #include "display.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include "usart.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -52,6 +56,7 @@
 uint16_t timer_val = 0; 
 HAL_StatusTypeDef rslt;
 strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
+char myText[50] = {'\0'};
 
 
 
@@ -91,6 +96,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
   rslt = InitSensors();
   rslt = InitDisplay();
+
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -141,9 +147,11 @@ void StartReadData(void *argument)
   
   for(;;)
   {
+    strcpy(myText, "Hello World from Task1 \n \r");
+    HAL_UART_Transmit(&hlpuart1,(uint8_t*)myText, sizeof(myText),50);
     TempHumPresSensor = ReadSensor();
     ReadAdcValue();    
-    osDelay(1000);
+    osDelay(100);
   }
   /* USER CODE END StartReadData */
 }
@@ -161,6 +169,8 @@ void StartDisplayData(void *argument)
   /* Infinite loop */
   for(;;)
   {
+    strcpy(myText, "Hello World from Task 2 \n \r");
+    HAL_UART_Transmit(&hlpuart1,(uint8_t*)myText, sizeof(myText),100);
     DisplaySensorData(TempHumPresSensor);
     osDelay(1200);
   }
