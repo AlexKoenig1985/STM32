@@ -1,32 +1,33 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file    adc.c
-  * @brief   This file provides code for the configuration
-  *          of the ADC instances.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file    adc.c
+ * @brief   This file provides code for the configuration
+ *          of the ADC instances.
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "adc.h"
 
 /* USER CODE BEGIN 0 */
+
 uint8_t adc_ready = 0;
 uint16_t adc_buf[ADC_BUF_SIZE];
-uint16_t externalVoltage_mV = 0;
-uint16_t internalTemperature_C = 0;
-uint16_t internalRefVoltage_mV = 0;
-uint16_t externalBatVoltage_mV = 0;
+static uint16_t externalVoltage_mV = 0;
+static uint16_t internalTemperature_C = 0;
+static uint16_t internalRefVoltage_mV = 0;
+static uint16_t externalBatVoltage_mV = 0;
 
 /* USER CODE END 0 */
 
@@ -48,7 +49,7 @@ void MX_ADC1_Init(void)
   /* USER CODE END ADC1_Init 1 */
 
   /** Common config
-  */
+   */
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_ASYNC_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
@@ -70,7 +71,7 @@ void MX_ADC1_Init(void)
   }
 
   /** Configure Regular Channel
-  */
+   */
   sConfig.Channel = ADC_CHANNEL_8;
   sConfig.Rank = ADC_REGULAR_RANK_1;
   sConfig.SamplingTime = ADC_SAMPLETIME_12CYCLES_5;
@@ -83,7 +84,7 @@ void MX_ADC1_Init(void)
   }
 
   /** Configure Regular Channel
-  */
+   */
   sConfig.Channel = ADC_CHANNEL_TEMPSENSOR;
   sConfig.Rank = ADC_REGULAR_RANK_2;
   sConfig.SamplingTime = ADC_SAMPLETIME_92CYCLES_5;
@@ -93,7 +94,7 @@ void MX_ADC1_Init(void)
   }
 
   /** Configure Regular Channel
-  */
+   */
   sConfig.Channel = ADC_CHANNEL_VREFINT;
   sConfig.Rank = ADC_REGULAR_RANK_3;
   sConfig.SamplingTime = ADC_SAMPLETIME_12CYCLES_5;
@@ -103,7 +104,7 @@ void MX_ADC1_Init(void)
   }
 
   /** Configure Regular Channel
-  */
+   */
   sConfig.Channel = ADC_CHANNEL_VBAT;
   sConfig.Rank = ADC_REGULAR_RANK_4;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -114,22 +115,21 @@ void MX_ADC1_Init(void)
   HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
   /* USER CODE END ADC1_Init 2 */
-
 }
 
-void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
+void HAL_ADC_MspInit(ADC_HandleTypeDef *adcHandle)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  if(adcHandle->Instance==ADC1)
+  if (adcHandle->Instance == ADC1)
   {
-  /* USER CODE BEGIN ADC1_MspInit 0 */
+    /* USER CODE BEGIN ADC1_MspInit 0 */
 
-  /* USER CODE END ADC1_MspInit 0 */
+    /* USER CODE END ADC1_MspInit 0 */
 
-  /** Initializes the peripherals clock
-  */
+    /** Initializes the peripherals clock
+     */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_ADC;
     PeriphClkInit.AdcClockSelection = RCC_ADCCLKSOURCE_PLLSAI1;
     PeriphClkInit.PLLSAI1.PLLSAI1Source = RCC_PLLSOURCE_HSI;
@@ -172,22 +172,22 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(adcHandle,DMA_Handle,hdma_adc1);
+    __HAL_LINKDMA(adcHandle, DMA_Handle, hdma_adc1);
 
-  /* USER CODE BEGIN ADC1_MspInit 1 */
+    /* USER CODE BEGIN ADC1_MspInit 1 */
 
-  /* USER CODE END ADC1_MspInit 1 */
+    /* USER CODE END ADC1_MspInit 1 */
   }
 }
 
-void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
+void HAL_ADC_MspDeInit(ADC_HandleTypeDef *adcHandle)
 {
 
-  if(adcHandle->Instance==ADC1)
+  if (adcHandle->Instance == ADC1)
   {
-  /* USER CODE BEGIN ADC1_MspDeInit 0 */
+    /* USER CODE BEGIN ADC1_MspDeInit 0 */
 
-  /* USER CODE END ADC1_MspDeInit 0 */
+    /* USER CODE END ADC1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_ADC_CLK_DISABLE();
 
@@ -198,9 +198,9 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 
     /* ADC1 DMA DeInit */
     HAL_DMA_DeInit(adcHandle->DMA_Handle);
-  /* USER CODE BEGIN ADC1_MspDeInit 1 */
+    /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
-  /* USER CODE END ADC1_MspDeInit 1 */
+    /* USER CODE END ADC1_MspDeInit 1 */
   }
 }
 
@@ -219,16 +219,40 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
 void ReadAdcValue(void)
 {
   if (adc_ready == TRUE)
-      {
+  {
 
-        externalVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[0], ADC_RESOLUTION12b);
-        internalTemperature_C = __HAL_ADC_CALC_TEMPERATURE(__VREFANALOG_VOLTAGE__, adc_buf[1], ADC_RESOLUTION12b);
-        internalRefVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[2], ADC_RESOLUTION12b);
-        externalBatVoltage_mV = (__HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[3], ADC_RESOLUTION12b)) * 4;
+    externalVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[0], ADC_RESOLUTION12b);
+    internalTemperature_C = __HAL_ADC_CALC_TEMPERATURE(__VREFANALOG_VOLTAGE__, adc_buf[1], ADC_RESOLUTION12b);
+    internalRefVoltage_mV = __HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[2], ADC_RESOLUTION12b);
+    externalBatVoltage_mV = (__HAL_ADC_CALC_DATA_TO_VOLTAGE(__VREFANALOG_VOLTAGE__, adc_buf[3], ADC_RESOLUTION12b)) * 4;
 
-        adc_ready = FALSE;
+    adc_ready = FALSE;
 
-        HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
-      }
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_buf, ADC_BUF_SIZE);
+  }
+}
+
+uint16_t ADC_GetSensorValues(ADC_enuSensorType SensorType)
+{
+  uint16_t SensorData = 0;
+  switch (SensorType)
+  {
+  case Temp:
+    SensorData = internalTemperature_C;
+    break;
+  case UExt:
+    SensorData = externalVoltage_mV;
+    break;
+  case URef:
+    SensorData = internalRefVoltage_mV;
+    break;
+  case UBatt:
+    SensorData = externalBatVoltage_mV;
+    break;
+  default:
+    SensorData = -300;
+    break;
+  }
+  return SensorData;
 }
 /* USER CODE END 1 */

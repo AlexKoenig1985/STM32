@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * File Name          : freertos.c
-  * Description        : Code for freertos applications
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * File Name          : freertos.c
+ * Description        : Code for freertos applications
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2024 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 
 /* Includes ------------------------------------------------------------------*/
@@ -53,28 +53,25 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-uint16_t timer_val = 0; 
+uint16_t timer_val = 0;
 HAL_StatusTypeDef rslt;
 strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
 char myText[50] = {'\0'};
-
-
-
 
 /* USER CODE END Variables */
 /* Definitions for ReadSensorData */
 osThreadId_t ReadSensorDataHandle;
 const osThreadAttr_t ReadSensorData_attributes = {
-  .name = "ReadSensorData",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
+    .name = "ReadSensorData",
+    .stack_size = 128 * 4,
+    .priority = (osPriority_t)osPriorityNormal,
 };
 /* Definitions for DisplayData */
 osThreadId_t DisplayDataHandle;
 const osThreadAttr_t DisplayData_attributes = {
-  .name = "DisplayData",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityBelowNormal,
+    .name = "DisplayData",
+    .stack_size = 128 * 4,
+    .priority = (osPriority_t)osPriorityBelowNormal,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -88,11 +85,12 @@ void StartDisplayData(void *argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
-  * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
-  */
-void MX_FREERTOS_Init(void) {
+ * @brief  FreeRTOS initialization
+ * @param  None
+ * @retval None
+ */
+void MX_FREERTOS_Init(void)
+{
   /* USER CODE BEGIN Init */
   rslt = InitSensors();
   rslt = InitDisplay();
@@ -130,27 +128,24 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
   /* USER CODE END RTOS_EVENTS */
-
 }
 
 /* USER CODE BEGIN Header_StartReadData */
 /**
-  * @brief  Function implementing the ReadSensorData thread.
-  * @param  argument: Not used
-  * @retval None
-  */
+ * @brief  Function implementing the ReadSensorData thread.
+ * @param  argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartReadData */
 void StartReadData(void *argument)
 {
   /* USER CODE BEGIN StartReadData */
   /* Infinite loop */
-  
-  for(;;)
+
+  for (;;)
   {
-    strcpy(myText, "Hello World from Task1 \n \r");
-    HAL_UART_Transmit(&hlpuart1,(uint8_t*)myText, sizeof(myText),50);
     TempHumPresSensor = ReadSensor();
-    ReadAdcValue();    
+    ReadAdcValue();
     osDelay(100);
   }
   /* USER CODE END StartReadData */
@@ -158,19 +153,30 @@ void StartReadData(void *argument)
 
 /* USER CODE BEGIN Header_StartDisplayData */
 /**
-* @brief Function implementing the DisplayData thread.
-* @param argument: Not used
-* @retval None
-*/
+ * @brief Function implementing the DisplayData thread.
+ * @param argument: Not used
+ * @retval None
+ */
 /* USER CODE END Header_StartDisplayData */
 void StartDisplayData(void *argument)
 {
   /* USER CODE BEGIN StartDisplayData */
   /* Infinite loop */
-  for(;;)
+  for (;;)
   {
     strcpy(myText, "Hello World from Task 2 \n \r");
-    HAL_UART_Transmit(&hlpuart1,(uint8_t*)myText, sizeof(myText),100);
+    ADC_enuSensorType SensorType = Temp;
+    uint16_t SensorValue = ADC_GetSensorValues(SensorType);
+    UART_SendSensorData("Temperature", SensorValue, "C");
+    SensorType = UExt;
+    SensorValue = ADC_GetSensorValues(SensorType);
+    UART_SendSensorData("External Voltage", SensorValue, "mV");
+    SensorType = URef;
+    SensorValue = ADC_GetSensorValues(SensorType);
+    UART_SendSensorData("Reference Voltage", SensorValue, "mV");
+    SensorType = UBatt;
+    SensorValue = ADC_GetSensorValues(SensorType);
+    UART_SendSensorData("Battery Voltage", SensorValue, "mV");
     DisplaySensorData(TempHumPresSensor);
     osDelay(1200);
   }
@@ -181,4 +187,3 @@ void StartDisplayData(void *argument)
 /* USER CODE BEGIN Application */
 
 /* USER CODE END Application */
-
