@@ -3,6 +3,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
+#include "adc.h"
 /*! CPP guard */
 #ifdef __cplusplus
 extern "C"
@@ -19,7 +20,7 @@ extern "C"
 
     int8_t InitSensors(void);
 
-    strFdbkSensor ReadSensor(void);
+    strFdbkSensor Sensor_Read(void);
 
 #ifdef __cplusplus
 }

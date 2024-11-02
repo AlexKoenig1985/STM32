@@ -10,7 +10,6 @@
 /* USER CODE BEGIN PV */
 
 static struct bme280_dev dev;
-static struct bme280_data comp_data;
 static int8_t rslt;
 
 /* USER CODE END PV */
@@ -21,6 +20,8 @@ static int8_t rslt;
 int8_t user_i2c_write(const uint8_t id, const uint8_t reg_addr, uint8_t *data, const uint16_t len);
 
 int8_t user_i2c_read(const uint8_t id, uint8_t reg_addr, uint8_t *data, const uint16_t len);
+
+static struct bme280_data I2C_ReadSensorRawData(struct bme280_dev *dev);
 
 static int8_t SetupSensors(void);
 
@@ -58,21 +59,32 @@ int8_t SetupSensors(void)
     return rslt;
 }
 
-strFdbkSensor ReadSensor(void)
+strFdbkSensor Sensor_Read(void)
 {
+    // struct bme280_data comp_data;
     strFdbkSensor TempHumPresSensor = {.humidity = 0, .pressure = 0, .temperature = 0, .rslt = BME280_OK};
 
-    rslt = bme280_set_sensor_mode(BME280_FORCED_MODE, &dev);
-    dev.delay_ms(40);
+    struct bme280_data SenorRawData = I2C_ReadSensorRawData(&dev);
 
-    rslt = bme280_get_sensor_data(BME280_ALL, &comp_data, &dev);
-
-    TempHumPresSensor.humidity = comp_data.humidity / 1000.0;
-    TempHumPresSensor.pressure = comp_data.pressure / 10024.0;
-    TempHumPresSensor.temperature = comp_data.temperature / 100.0;
+    TempHumPresSensor.humidity = SenorRawData.humidity / 1000.0;
+    TempHumPresSensor.pressure = SenorRawData.pressure / 10024.0;
+    TempHumPresSensor.temperature = SenorRawData.temperature / 100.0;
     TempHumPresSensor.rslt = rslt;
 
+    ADC_ReadValue();
+
     return TempHumPresSensor;
+}
+
+struct bme280_data I2C_ReadSensorRawData(struct bme280_dev *dev)
+{
+    struct bme280_data Raw_Data;
+    rslt = bme280_set_sensor_mode(BME280_FORCED_MODE, dev);
+    // dev->delay_ms(40);
+
+    rslt = bme280_get_sensor_data(BME280_ALL, &Raw_Data, dev);
+
+    return Raw_Data;
 }
 
 int8_t user_i2c_write(const uint8_t id, const uint8_t reg_addr, uint8_t *data, const uint16_t len)

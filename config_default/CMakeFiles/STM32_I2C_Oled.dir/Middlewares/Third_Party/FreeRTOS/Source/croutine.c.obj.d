@@ -1,0 +1,20 @@
+CMakeFiles/STM32_I2C_Oled.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: \
+ C:/Development/STM32/STM32/Middlewares/Third_Party/FreeRTOS/Source/croutine.c \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/include/stddef.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/include/stdint.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/stdint.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/machine/_default_types.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/sys/features.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/_newlib_version.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/sys/_intsup.h \
+ C:/ST/STM32CubeIDE_1.16.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/sys/_stdint.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Core/Inc/FreeRTOSConfig.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+ C:/Development/STM32/STM32/cmake/stm32cubemx/../../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h

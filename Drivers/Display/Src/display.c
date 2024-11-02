@@ -65,7 +65,7 @@ void DisplaySensorData(strFdbkSensor SensorData)
     }
     if (rslt == HAL_OK)
     {
-        rslt = DisplayValues("Humidity", SensorData.temperature, "%", DISPLAY_X_HUMIDITY, DISPLAY_Y_HUMIDITY);
+        rslt = DisplayValues("Humidity", SensorData.humidity, "%", DISPLAY_X_HUMIDITY, DISPLAY_Y_HUMIDITY);
     }
 }
 

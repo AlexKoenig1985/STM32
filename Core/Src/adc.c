@@ -216,7 +216,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
    */
 }
 
-void ReadAdcValue(void)
+void ADC_ReadValue(void)
 {
   if (adc_ready == TRUE)
   {

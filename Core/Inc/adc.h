@@ -54,7 +54,7 @@ extern "C"
   void MX_ADC1_Init(void);
 
   /* USER CODE BEGIN Prototypes */
-  void ReadAdcValue(void);
+  void ADC_ReadValue(void);
   uint16_t ADC_GetSensorValues(ADC_enuSensorType SensorType);
   /* USER CODE END Prototypes */
 
