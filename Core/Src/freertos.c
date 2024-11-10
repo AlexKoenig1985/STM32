@@ -68,13 +68,25 @@ const osThreadAttr_t ReadSensorData_attributes = {
     .stack_size = 256 * 4,
     .priority = (osPriority_t)osPriorityNormal,
 };
-/* Definitions for DisplayData */
+/* Definitions for TaskReseive01 */
 osThreadId_t DisplayDataHandle;
 const osThreadAttr_t DisplayData_attributes = {
     .name = "DisplayData",
     .stack_size = 256 * 4,
     .priority = (osPriority_t)osPriorityBelowNormal,
 };
+/* Definitions for St_Queue */
+osMessageQueueId_t St_QueueHandle;
+const osMessageQueueAttr_t St_Queue_attributes = {
+    .name = "St_Queue"};
+/* Definitions for periodicTimer */
+osTimerId_t periodicTimerHandle;
+const osTimerAttr_t periodicTimer_attributes = {
+    .name = "periodicTimer"};
+/* Definitions for OnceTimer */
+osTimerId_t OnceTimerHandle;
+const osTimerAttr_t OnceTimer_attributes = {
+    .name = "OnceTimer"};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -83,6 +95,8 @@ const osThreadAttr_t DisplayData_attributes = {
 
 void StartReadData(void *argument);
 void StartDisplayData(void *argument);
+void PTCallback(void *argument);
+void OTCallback(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -107,10 +121,21 @@ void MX_FREERTOS_Init(void)
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
+  /* Create the timer(s) */
+  /* creation of periodicTimer */
+  periodicTimerHandle = osTimerNew(PTCallback, osTimerPeriodic, NULL, &periodicTimer_attributes);
+
+  /* creation of OnceTimer */
+  OnceTimerHandle = osTimerNew(OTCallback, osTimerOnce, NULL, &OnceTimer_attributes);
+
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   HAL_TIM_Base_Start(&htim17);
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of St_Queue */
+  St_QueueHandle = osMessageQueueNew(16, sizeof(uint16_t), &St_Queue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -172,7 +197,23 @@ void StartDisplayData(void *argument)
     DisplaySensorData(TempHumPresSensor);
     osDelay(1000);
   }
-  /* USER CODE END StartDisplayData */
+  /* USER CODE END StartTaskReseive01 */
+}
+
+/* PTCallback function */
+void PTCallback(void *argument)
+{
+  /* USER CODE BEGIN PTCallback */
+
+  /* USER CODE END PTCallback */
+}
+
+/* OTCallback function */
+void OTCallback(void *argument)
+{
+  /* USER CODE BEGIN OTCallback */
+
+  /* USER CODE END OTCallback */
 }
 
 /* Private application code --------------------------------------------------*/

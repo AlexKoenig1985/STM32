@@ -29,6 +29,9 @@ static volatile uint64_t SystemTickStart = 0;
 static volatile uint64_t SystemTickStop = 0;
 static volatile uint64_t SystemTickDelta = 0;
 
+static uint8_t DataIsSend = 1;
+static char TextBuffer[35] = {'\0'};
+
 void UART_SendData(const char *label, const uint16_t value, const char *unit);
 /* USER CODE END 0 */
 
@@ -77,21 +80,22 @@ void MX_LPUART1_UART_Init(void)
   /* USER CODE BEGIN LPUART1_Init 2 */
 
   /* USER CODE END LPUART1_Init 2 */
+
 }
 
-void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
+void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  if (uartHandle->Instance == LPUART1)
+  if(uartHandle->Instance==LPUART1)
   {
-    /* USER CODE BEGIN LPUART1_MspInit 0 */
+  /* USER CODE BEGIN LPUART1_MspInit 0 */
 
-    /* USER CODE END LPUART1_MspInit 0 */
+  /* USER CODE END LPUART1_MspInit 0 */
 
-    /** Initializes the peripherals clock
-     */
+  /** Initializes the peripherals clock
+  */
     PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_LPUART1;
     PeriphClkInit.Lpuart1ClockSelection = RCC_LPUART1CLKSOURCE_PCLK1;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
@@ -108,7 +112,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
     PG7     ------> LPUART1_TX
     PG8     ------> LPUART1_RX
     */
-    GPIO_InitStruct.Pin = STLINK_TX_Pin | STLINK_RX_Pin;
+    GPIO_InitStruct.Pin = STLINK_TX_Pin|STLINK_RX_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -131,25 +135,25 @@ void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(uartHandle, hdmatx, hdma_lpuart1_tx);
+    __HAL_LINKDMA(uartHandle,hdmatx,hdma_lpuart1_tx);
 
     /* LPUART1 interrupt Init */
     HAL_NVIC_SetPriority(LPUART1_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(LPUART1_IRQn);
-    /* USER CODE BEGIN LPUART1_MspInit 1 */
+  /* USER CODE BEGIN LPUART1_MspInit 1 */
 
-    /* USER CODE END LPUART1_MspInit 1 */
+  /* USER CODE END LPUART1_MspInit 1 */
   }
 }
 
-void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
+void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 {
 
-  if (uartHandle->Instance == LPUART1)
+  if(uartHandle->Instance==LPUART1)
   {
-    /* USER CODE BEGIN LPUART1_MspDeInit 0 */
+  /* USER CODE BEGIN LPUART1_MspDeInit 0 */
 
-    /* USER CODE END LPUART1_MspDeInit 0 */
+  /* USER CODE END LPUART1_MspDeInit 0 */
     /* Peripheral clock disable */
     __HAL_RCC_LPUART1_CLK_DISABLE();
 
@@ -157,16 +161,16 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
     PG7     ------> LPUART1_TX
     PG8     ------> LPUART1_RX
     */
-    HAL_GPIO_DeInit(GPIOG, STLINK_TX_Pin | STLINK_RX_Pin);
+    HAL_GPIO_DeInit(GPIOG, STLINK_TX_Pin|STLINK_RX_Pin);
 
     /* LPUART1 DMA DeInit */
     HAL_DMA_DeInit(uartHandle->hdmatx);
 
     /* LPUART1 interrupt Deinit */
     HAL_NVIC_DisableIRQ(LPUART1_IRQn);
-    /* USER CODE BEGIN LPUART1_MspDeInit 1 */
+  /* USER CODE BEGIN LPUART1_MspDeInit 1 */
 
-    /* USER CODE END LPUART1_MspDeInit 1 */
+  /* USER CODE END LPUART1_MspDeInit 1 */
   }
 }
 
@@ -175,32 +179,38 @@ void UART_SendSensorData(void)
 {
   Sensor_enuSensorType SensorType = Temp;
   uint16_t SensorValue = Sensor_GetValues(SensorType);
+
   UART_SendData("uC Temperature", SensorValue, "C");
-  // SensorType = UExt;
-  // SensorValue = Sensor_GetValues(SensorType);
-  // UART_SendData("External Voltage", SensorValue, "mV");
-  // SensorType = URef;
-  // SensorValue = Sensor_GetValues(SensorType);
-  // UART_SendData("Reference Voltage", SensorValue, "mV");
-  // SensorType = UBatt;
-  // SensorValue = Sensor_GetValues(SensorType);
-  // UART_SendData("Battery Voltage", SensorValue, "mV");
+  SensorType = UExt;
+  SensorValue = Sensor_GetValues(SensorType);
+  UART_SendData("External Voltage", SensorValue, "mV");
+  SensorType = URef;
+  SensorValue = Sensor_GetValues(SensorType);
+  UART_SendData("Reference Voltage", SensorValue, "mV");
+  SensorType = UBatt;
+  SensorValue = Sensor_GetValues(SensorType);
+  UART_SendData("Battery Voltage", SensorValue, "mV");
 }
 
 void UART_SendData(const char *label, const uint16_t value, const char *unit)
 {
-  char TextBuffer[35] = {'\0'};
-  if (hlpuart1.gState == HAL_UART_STATE_READY)
+  if (DataIsSend == 1)
   {
     sprintf(TextBuffer, "%s %d %s \n \r", label, value, unit);
     SystemTickStart = SysTick->VAL;
 
-    HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)TextBuffer, strlen(TextBuffer));
+    HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)TextBuffer, sizeof(TextBuffer));
+    DataIsSend = 0;
     SystemTickStop = SysTick->VAL;
     if (SystemTickStart > SystemTickStop)
     {
       SystemTickDelta = SystemTickStart - SystemTickStop;
     }
   }
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+{
+  DataIsSend = 1;
 }
 /* USER CODE END 1 */
