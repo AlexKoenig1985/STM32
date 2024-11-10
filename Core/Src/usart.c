@@ -22,9 +22,18 @@
 
 /* USER CODE BEGIN 0 */
 #include <stdio.h>
+#include <string.h>
+#include "sensor.h"
+
+static volatile uint64_t SystemTickStart = 0;
+static volatile uint64_t SystemTickStop = 0;
+static volatile uint64_t SystemTickDelta = 0;
+
+void UART_SendData(const char *label, const uint16_t value, const char *unit);
 /* USER CODE END 0 */
 
 UART_HandleTypeDef hlpuart1;
+DMA_HandleTypeDef hdma_lpuart1_tx;
 
 /* LPUART1 init function */
 
@@ -106,6 +115,27 @@ void HAL_UART_MspInit(UART_HandleTypeDef *uartHandle)
     GPIO_InitStruct.Alternate = GPIO_AF8_LPUART1;
     HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
 
+    /* LPUART1 DMA Init */
+    /* LPUART1_TX Init */
+    hdma_lpuart1_tx.Instance = DMA1_Channel2;
+    hdma_lpuart1_tx.Init.Request = DMA_REQUEST_LPUART1_TX;
+    hdma_lpuart1_tx.Init.Direction = DMA_MEMORY_TO_PERIPH;
+    hdma_lpuart1_tx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_lpuart1_tx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_lpuart1_tx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_lpuart1_tx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_lpuart1_tx.Init.Mode = DMA_NORMAL;
+    hdma_lpuart1_tx.Init.Priority = DMA_PRIORITY_LOW;
+    if (HAL_DMA_Init(&hdma_lpuart1_tx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(uartHandle, hdmatx, hdma_lpuart1_tx);
+
+    /* LPUART1 interrupt Init */
+    HAL_NVIC_SetPriority(LPUART1_IRQn, 5, 0);
+    HAL_NVIC_EnableIRQ(LPUART1_IRQn);
     /* USER CODE BEGIN LPUART1_MspInit 1 */
 
     /* USER CODE END LPUART1_MspInit 1 */
@@ -129,6 +159,11 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
     */
     HAL_GPIO_DeInit(GPIOG, STLINK_TX_Pin | STLINK_RX_Pin);
 
+    /* LPUART1 DMA DeInit */
+    HAL_DMA_DeInit(uartHandle->hdmatx);
+
+    /* LPUART1 interrupt Deinit */
+    HAL_NVIC_DisableIRQ(LPUART1_IRQn);
     /* USER CODE BEGIN LPUART1_MspDeInit 1 */
 
     /* USER CODE END LPUART1_MspDeInit 1 */
@@ -136,10 +171,36 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef *uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
-void UART_SendSensorData(const char *label, const uint16_t value, const char *unit)
+void UART_SendSensorData(void)
 {
-  char TextBuffer[50] = {'\0'};
-  sprintf(TextBuffer, "%s : %d %s \n \r", label, value, unit);
-  HAL_UART_Transmit(&hlpuart1, (uint8_t *)TextBuffer, sizeof(TextBuffer), 100);
+  Sensor_enuSensorType SensorType = Temp;
+  uint16_t SensorValue = Sensor_GetValues(SensorType);
+  UART_SendData("uC Temperature", SensorValue, "C");
+  // SensorType = UExt;
+  // SensorValue = Sensor_GetValues(SensorType);
+  // UART_SendData("External Voltage", SensorValue, "mV");
+  // SensorType = URef;
+  // SensorValue = Sensor_GetValues(SensorType);
+  // UART_SendData("Reference Voltage", SensorValue, "mV");
+  // SensorType = UBatt;
+  // SensorValue = Sensor_GetValues(SensorType);
+  // UART_SendData("Battery Voltage", SensorValue, "mV");
+}
+
+void UART_SendData(const char *label, const uint16_t value, const char *unit)
+{
+  char TextBuffer[35] = {'\0'};
+  if (hlpuart1.gState == HAL_UART_STATE_READY)
+  {
+    sprintf(TextBuffer, "%s %d %s \n \r", label, value, unit);
+    SystemTickStart = SysTick->VAL;
+
+    HAL_UART_Transmit_DMA(&hlpuart1, (uint8_t *)TextBuffer, strlen(TextBuffer));
+    SystemTickStop = SysTick->VAL;
+    if (SystemTickStart > SystemTickStop)
+    {
+      SystemTickDelta = SystemTickStart - SystemTickStop;
+    }
+  }
 }
 /* USER CODE END 1 */

@@ -147,13 +147,8 @@ void StartReadData(void *argument)
   for (;;)
   {
     TempHumPresSensor = Sensor_Read();
-    sprintf(myText, "The index in Task 1 is %d \n \r", idx++);
-    HAL_UART_Transmit(&hlpuart1, (uint8_t *)myText, sizeof(myText), 100);
+
     osDelay(1000);
-    if (idx == 3)
-    {
-      osDelayUntil(6000);
-    }
   }
   /* USER CODE END StartReadData */
 }
@@ -171,21 +166,10 @@ void StartDisplayData(void *argument)
   /* Infinite loop */
   for (;;)
   {
-    sprintf(myText, "The Task 2 is runing %d sec \n \r", sec++);
-    HAL_UART_Transmit(&hlpuart1, (uint8_t *)myText, sizeof(myText), 100);
-    // ADC_enuSensorType SensorType = Temp;
-    // uint16_t SensorValue = ADC_GetSensorValues(SensorType);
-    // UART_SendSensorData("uC Temperature", SensorValue, "C");
-    // SensorType = UExt;
-    // SensorValue = ADC_GetSensorValues(SensorType);
-    // UART_SendSensorData("External Voltage", SensorValue, "mV");
-    // SensorType = URef;
-    // SensorValue = ADC_GetSensorValues(SensorType);
-    // UART_SendSensorData("Reference Voltage", SensorValue, "mV");
-    // SensorType = UBatt;
-    // SensorValue = ADC_GetSensorValues(SensorType);
-    // UART_SendSensorData("Battery Voltage", SensorValue, "mV");
-    // DisplaySensorData(TempHumPresSensor);
+
+    UART_SendSensorData();
+
+    DisplaySensorData(TempHumPresSensor);
     osDelay(1000);
   }
   /* USER CODE END StartDisplayData */

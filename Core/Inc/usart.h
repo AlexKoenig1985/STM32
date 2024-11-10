@@ -42,7 +42,7 @@ extern "C"
   void MX_LPUART1_UART_Init(void);
 
   /* USER CODE BEGIN Prototypes */
-  void UART_SendSensorData(const char *label, const uint16_t value, const char *unit);
+  void UART_SendSensorData(void);
   /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

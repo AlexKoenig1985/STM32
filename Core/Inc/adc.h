@@ -22,18 +22,17 @@
 #define __ADC_H__
 
 #ifdef __cplusplus
-extern "C"
-{
+extern "C" {
 #endif
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-  /* USER CODE BEGIN Includes */
+/* USER CODE BEGIN Includes */
 
-  /* USER CODE END Includes */
+/* USER CODE END Includes */
 
-  extern ADC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc1;
 
 /* USER CODE BEGIN Private defines */
 #ifndef TRUE
@@ -42,24 +41,37 @@ extern "C"
 #ifndef FALSE
 #define FALSE UINT8_C(0)
 #endif
-  typedef enum
+
+  typedef struct
   {
-    Temp = 0,
-    UExt = 1,
-    URef = 2,
-    UBatt = 3
-  } ADC_enuSensorType;
-  /* USER CODE END Private defines */
+    uint16_t UExtRaw;
+    uint16_t UBattRaw;
+    uint16_t UIntRefRaw;
+  } Adc_strURawData;
 
-  void MX_ADC1_Init(void);
+  typedef struct
+  {
+    uint16_t TempIntUcRaw;
+  } Adc_strTempRawData;
 
-  /* USER CODE BEGIN Prototypes */
-  void ADC_ReadValue(void);
-  uint16_t ADC_GetSensorValues(ADC_enuSensorType SensorType);
-  /* USER CODE END Prototypes */
+  typedef struct
+  {
+    Adc_strURawData URawData;
+    Adc_strTempRawData TempRawData;
+  } Adc_strRawData;
+
+/* USER CODE END Private defines */
+
+void MX_ADC1_Init(void);
+
+/* USER CODE BEGIN Prototypes */
+  Adc_strRawData ADC_ReadRawValue(void);
+
+/* USER CODE END Prototypes */
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* __ADC_H__ */
+
